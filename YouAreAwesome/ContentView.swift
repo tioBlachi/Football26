@@ -10,11 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @State private var message = "What is Football to You?"
     var body: some View {
+        
         VStack {
+            Spacer()
+            
             Text(message)
                 .font(.largeTitle)
-                .fontWeight(.thin)
+                .fontWeight(.ultraLight)
                 .foregroundStyle(.green)
+            
             HStack {
                 Image(systemName: "figure.american.football")
                     .resizable()
@@ -29,9 +33,22 @@ struct ContentView: View {
                     .scaledToFit()
                     .foregroundStyle(.purple)
             }
-            Button("Click Me!") {
-                message = "American is the only answer!"
+            .frame(width: 300, height: 200)
+            
+            Spacer()
+            
+            HStack {
+                Button("Awesome!") {
+                    message = "Awesome!"
+                }
+                                
+                Button("Great!") {
+                    message = "Great!"
+                }
             }
+            .buttonStyle(.borderedProminent)
+            .font(.title2)
+            .tint(Color.orange)
         }
         .padding()
     }
