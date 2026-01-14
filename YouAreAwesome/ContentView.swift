@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message = "What is Football to You?"
     var body: some View {
         VStack {
-            Text("What is Football to You?")
+            Text(message)
                 .font(.largeTitle)
                 .fontWeight(.thin)
                 .foregroundStyle(.green)
@@ -27,6 +28,9 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(.purple)
+            }
+            Button("Click Me!") {
+                message = "American is the only answer!"
             }
         }
         .padding()
